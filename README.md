@@ -3,6 +3,26 @@ IDZAQAudioPlayer
 
 An easy to use audio player that uses Audio Queues.
 
+This is unfinished source code for an upcoming tutorial on my blog. Please note the following:
+* Seeking is only partially implemented
+* Error handling is incomplete or non-existent.
+
+Structure
+---------
+
+The protocol IDZAudioDecoder defines the methods and properties that are required to be an IDZAudioDecoder.
+The class IDZOggVorbisFileDecoder is an audio decoder that conforms to the IDZAudioDecoder protocol. 
+
+The class IDZAQAudioPlayer can play, using Audio Queues, the decoded audio from an IDZAudioDecoder.
+
+The protocol IDZAudioPlayer defines the methods and properties that are required to be an IDZAudioPlayer. These are
+designed to be as close as possible to the methods provided by Apple's AVAudioPlayer class.
+
+The class IDZAudioPlayerViewController knows how to control an audio player that conforms to the IDZAudioPlayer protocol,
+so, for example, you could trivially subclass AVAudioPlayer, adopting the IDZAudioPlayer protocol and use the same view
+controller to control it. The IDZAudioPlayerViewController is not intended to be pretty or a great example of UI design; 
+it is intended soley as a demonstration and test interface for IDZAudioPlayers!!!
+
 Licenses
 ========
 
