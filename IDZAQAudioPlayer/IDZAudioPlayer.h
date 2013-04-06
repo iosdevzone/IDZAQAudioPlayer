@@ -1,6 +1,6 @@
 //
-//  IDZAQAudioPlayerAppDelegate.h
-//  IDZAQAudioPlayer
+//  IDZAudioPlayer.h
+//  IDZAudioPlayer
 //
 // Copyright (c) 2013 iOSDeveloperZone.com
 //
@@ -21,20 +21,40 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+#import <Foundation/Foundation.h>
+
+
+@protocol IDZAudioPlayer;
+
+@protocol IDZAudioPlayerDelegate
+- (void)audioPlayerDidFinishPlaying:(id<IDZAudioPlayer>)player
+                       successfully:(BOOL)flag;
+- (void)audioPlayerDecodeErrorDidOccur:(id<IDZAudioPlayer>)player
+                                 error:(NSError *)error;
+@end
+
 /**
- * @file
- * @brief Xcode generated App Delegate header file.
+ * @brief Interface definition for an IDZAudioPlayer.
+ *
+ * This protocol defines the expected interface exposed by
+ * an IDZAudioPlayer.
+ * 
+ * @see IDZAQAudioPlayer
  */
-#import <UIKit/UIKit.h>
+@protocol IDZAudioPlayer <NSObject>
 
-@class IDZAudioPlayerViewController;
-/**
- * @brief Xcode generate App Delegate class.
- */
-@interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
+- (BOOL)prepareToPlay;
+- (BOOL)play;
+- (BOOL)pause;
+- (BOOL)stop;
 
-@property (strong, nonatomic) UIWindow *window;
+/* properties */
 
-@property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
+@property(readonly, getter=isPlaying) BOOL playing;
+@property(readonly) NSUInteger numberOfChannels;
+@property(readonly) NSTimeInterval duration;
+@property(assign) id<IDZAudioPlayerDelegate> delegate;
+@property NSTimeInterval currentTime;
+@property(readonly) NSTimeInterval deviceCurrentTime;
 
 @end

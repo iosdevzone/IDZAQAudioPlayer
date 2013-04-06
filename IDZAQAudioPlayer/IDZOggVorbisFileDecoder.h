@@ -1,6 +1,6 @@
 //
-//  IDZAQAudioPlayerAppDelegate.h
-//  IDZAQAudioPlayer
+//  IDZOggVorbisFileDecoder.h
+//  IDZAudioDecoder
 //
 // Copyright (c) 2013 iOSDeveloperZone.com
 //
@@ -21,20 +21,12 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-/**
- * @file
- * @brief Xcode generated App Delegate header file.
- */
-#import <UIKit/UIKit.h>
+//
+#import <Foundation/Foundation.h>
+#import "IDZAudioDecoder.h"
 
-@class IDZAudioPlayerViewController;
-/**
- * @brief Xcode generate App Delegate class.
- */
-@interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
+@interface IDZOggVorbisFileDecoder : NSObject<IDZAudioDecoder>
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
+- (id)initWithContentsOfURL:(NSURL*)url error:(NSError**)error;
 
 @end

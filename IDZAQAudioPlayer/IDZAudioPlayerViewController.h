@@ -1,6 +1,6 @@
 //
-//  IDZAQAudioPlayerAppDelegate.h
-//  IDZAQAudioPlayer
+//  IDZViewController.h
+//  IDZAudoPlayer
 //
 // Copyright (c) 2013 iOSDeveloperZone.com
 //
@@ -21,20 +21,34 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-/**
- * @file
- * @brief Xcode generated App Delegate header file.
- */
 #import <UIKit/UIKit.h>
+#import "IDZAQAudioPlayer.h"
 
-@class IDZAudioPlayerViewController;
-/**
- * @brief Xcode generate App Delegate class.
- */
-@interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
+@interface IDZAudioPlayerViewController : UIViewController<IDZAudioPlayerDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) IBOutlet UILabel *currentTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deviceCurrentTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfChannelsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playingLabel;
 
-@property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
+@property (weak, nonatomic) IBOutlet UILabel *elapsedTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *remainingTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
+
+
+
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
+- (IBAction)play:(id)sender;
+- (IBAction)pause:(id)sender;
+- (IBAction)stop:(id)sender;
+
+- (IBAction)currentTimeSliderValueChanged:(id)sender;
+- (IBAction)currentTimeSliderTouchUpInside:(id)sender;
+
 
 @end

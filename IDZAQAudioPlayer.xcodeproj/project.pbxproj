@@ -16,8 +16,14 @@
 		0C2E08D2170F833500450410 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08D1170F833500450410 /* Default.png */; };
 		0C2E08D4170F833500450410 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08D3170F833500450410 /* Default@2x.png */; };
 		0C2E08D6170F833500450410 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08D5170F833500450410 /* Default-568h@2x.png */; };
-		0C2E08D9170F833500450410 /* IDZAQAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E08D8170F833500450410 /* IDZAQAudioPlayerViewController.m */; };
-		0C2E08DC170F833500450410 /* IDZAQAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08DA170F833500450410 /* IDZAQAudioPlayerViewController.xib */; };
+		0C2E08E5170F8EE900450410 /* IDZOggVorbisFileDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E08E4170F8EE900450410 /* IDZOggVorbisFileDecoder.mm */; };
+		0C2E08E8170F9D9000450410 /* IDZAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E08E7170F9D9000450410 /* IDZAudioPlayerViewController.m */; };
+		0C2E08EB170F9DA200450410 /* IDZAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08E9170F9DA100450410 /* IDZAudioPlayerViewController.xib */; };
+		0C2E08EE170F9DC600450410 /* Ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2E08EC170F9DC500450410 /* Ogg.framework */; };
+		0C2E08EF170F9DC600450410 /* Vorbis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2E08ED170F9DC600450410 /* Vorbis.framework */; };
+		0C2E08F2170F9E3F00450410 /* IDZAQAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E08F1170F9E3E00450410 /* IDZAQAudioPlayer.m */; };
+		0C2E08F4170F9E8900450410 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2E08F3170F9E8800450410 /* AudioToolbox.framework */; };
+		0C2E08F6170F9FEE00450410 /* Rondo_Alla_Turka.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E08F5170F9FEE00450410 /* Rondo_Alla_Turka.ogg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +40,19 @@
 		0C2E08D1170F833500450410 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0C2E08D3170F833500450410 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0C2E08D5170F833500450410 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0C2E08D7170F833500450410 /* IDZAQAudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDZAQAudioPlayerViewController.h; sourceTree = "<group>"; };
-		0C2E08D8170F833500450410 /* IDZAQAudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDZAQAudioPlayerViewController.m; sourceTree = "<group>"; };
-		0C2E08DB170F833500450410 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IDZAQAudioPlayerViewController.xib; sourceTree = "<group>"; };
+		0C2E08E2170F8EE800450410 /* IDZAudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDZAudioDecoder.h; sourceTree = "<group>"; };
+		0C2E08E3170F8EE800450410 /* IDZOggVorbisFileDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDZOggVorbisFileDecoder.h; sourceTree = "<group>"; };
+		0C2E08E4170F8EE900450410 /* IDZOggVorbisFileDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDZOggVorbisFileDecoder.mm; sourceTree = "<group>"; };
+		0C2E08E6170F9D9000450410 /* IDZAudioPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDZAudioPlayerViewController.h; sourceTree = "<group>"; };
+		0C2E08E7170F9D9000450410 /* IDZAudioPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDZAudioPlayerViewController.m; sourceTree = "<group>"; };
+		0C2E08EA170F9DA200450410 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IDZAudioPlayerViewController.xib; sourceTree = "<group>"; };
+		0C2E08EC170F9DC500450410 /* Ogg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ogg.framework; path = Frameworks/Ogg.framework; sourceTree = "<group>"; };
+		0C2E08ED170F9DC600450410 /* Vorbis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vorbis.framework; path = Frameworks/Vorbis.framework; sourceTree = "<group>"; };
+		0C2E08F0170F9E3E00450410 /* IDZAQAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDZAQAudioPlayer.h; sourceTree = "<group>"; };
+		0C2E08F1170F9E3E00450410 /* IDZAQAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDZAQAudioPlayer.m; sourceTree = "<group>"; };
+		0C2E08F3170F9E8800450410 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0C2E08F5170F9FEE00450410 /* Rondo_Alla_Turka.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rondo_Alla_Turka.ogg; sourceTree = "<group>"; };
+		0C2E08F7170FA0CE00450410 /* IDZAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDZAudioPlayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2E08F4170F9E8900450410 /* AudioToolbox.framework in Frameworks */,
+				0C2E08EE170F9DC600450410 /* Ogg.framework in Frameworks */,
+				0C2E08EF170F9DC600450410 /* Vorbis.framework in Frameworks */,
 				0C2E08C0170F833500450410 /* UIKit.framework in Frameworks */,
 				0C2E08C2170F833500450410 /* Foundation.framework in Frameworks */,
 				0C2E08C4170F833500450410 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +92,9 @@
 		0C2E08BE170F833400450410 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C2E08F3170F9E8800450410 /* AudioToolbox.framework */,
+				0C2E08EC170F9DC500450410 /* Ogg.framework */,
+				0C2E08ED170F9DC600450410 /* Vorbis.framework */,
 				0C2E08BF170F833400450410 /* UIKit.framework */,
 				0C2E08C1170F833500450410 /* Foundation.framework */,
 				0C2E08C3170F833500450410 /* CoreGraphics.framework */,
@@ -83,11 +105,17 @@
 		0C2E08C5170F833500450410 /* IDZAQAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				0C2E08F7170FA0CE00450410 /* IDZAudioPlayer.h */,
+				0C2E08F0170F9E3E00450410 /* IDZAQAudioPlayer.h */,
+				0C2E08F1170F9E3E00450410 /* IDZAQAudioPlayer.m */,
+				0C2E08E9170F9DA100450410 /* IDZAudioPlayerViewController.xib */,
+				0C2E08E6170F9D9000450410 /* IDZAudioPlayerViewController.h */,
+				0C2E08E7170F9D9000450410 /* IDZAudioPlayerViewController.m */,
 				0C2E08CE170F833500450410 /* IDZAQAudioPlayerAppDelegate.h */,
 				0C2E08CF170F833500450410 /* IDZAQAudioPlayerAppDelegate.m */,
-				0C2E08D7170F833500450410 /* IDZAQAudioPlayerViewController.h */,
-				0C2E08D8170F833500450410 /* IDZAQAudioPlayerViewController.m */,
-				0C2E08DA170F833500450410 /* IDZAQAudioPlayerViewController.xib */,
+				0C2E08E2170F8EE800450410 /* IDZAudioDecoder.h */,
+				0C2E08E3170F8EE800450410 /* IDZOggVorbisFileDecoder.h */,
+				0C2E08E4170F8EE900450410 /* IDZOggVorbisFileDecoder.mm */,
 				0C2E08C6170F833500450410 /* Supporting Files */,
 			);
 			path = IDZAQAudioPlayer;
@@ -96,6 +124,7 @@
 		0C2E08C6170F833500450410 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C2E08F5170F9FEE00450410 /* Rondo_Alla_Turka.ogg */,
 				0C2E08C7170F833500450410 /* IDZAQAudioPlayer-Info.plist */,
 				0C2E08C8170F833500450410 /* InfoPlist.strings */,
 				0C2E08CB170F833500450410 /* main.m */,
@@ -163,7 +192,8 @@
 				0C2E08D2170F833500450410 /* Default.png in Resources */,
 				0C2E08D4170F833500450410 /* Default@2x.png in Resources */,
 				0C2E08D6170F833500450410 /* Default-568h@2x.png in Resources */,
-				0C2E08DC170F833500450410 /* IDZAQAudioPlayerViewController.xib in Resources */,
+				0C2E08EB170F9DA200450410 /* IDZAudioPlayerViewController.xib in Resources */,
+				0C2E08F6170F9FEE00450410 /* Rondo_Alla_Turka.ogg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +206,9 @@
 			files = (
 				0C2E08CC170F833500450410 /* main.m in Sources */,
 				0C2E08D0170F833500450410 /* IDZAQAudioPlayerAppDelegate.m in Sources */,
-				0C2E08D9170F833500450410 /* IDZAQAudioPlayerViewController.m in Sources */,
+				0C2E08E5170F8EE900450410 /* IDZOggVorbisFileDecoder.mm in Sources */,
+				0C2E08E8170F9D9000450410 /* IDZAudioPlayerViewController.m in Sources */,
+				0C2E08F2170F9E3F00450410 /* IDZAQAudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +223,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		0C2E08DA170F833500450410 /* IDZAQAudioPlayerViewController.xib */ = {
+		0C2E08E9170F9DA100450410 /* IDZAudioPlayerViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C2E08DB170F833500450410 /* en */,
+				0C2E08EA170F9DA200450410 /* en */,
 			);
-			name = IDZAQAudioPlayerViewController.xib;
+			name = IDZAudioPlayerViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -261,6 +293,10 @@
 		0C2E08E0170F833500450410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDZAQAudioPlayer/IDZAQAudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "IDZAQAudioPlayer/IDZAQAudioPlayer-Info.plist";
@@ -272,6 +308,10 @@
 		0C2E08E1170F833500450410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDZAQAudioPlayer/IDZAQAudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "IDZAQAudioPlayer/IDZAQAudioPlayer-Info.plist";
@@ -299,6 +339,7 @@
 				0C2E08E1170F833500450410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  IDZAQAudioPlayerAppDelegate.h
+//  IDZAQAudioPlayer.h
 //  IDZAQAudioPlayer
 //
 // Copyright (c) 2013 iOSDeveloperZone.com
@@ -21,20 +21,19 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+//
+#import <Foundation/Foundation.h>
+#import "IDZAudioPlayer.h"
+#import "IDZAudioDecoder.h"
 /**
- * @file
- * @brief Xcode generated App Delegate header file.
+ * @brief An Audio Queue based audio player conforming to IDZAudioPlayer.
  */
-#import <UIKit/UIKit.h>
+@interface IDZAQAudioPlayer : NSObject<IDZAudioPlayer>
 
-@class IDZAudioPlayerViewController;
-/**
- * @brief Xcode generate App Delegate class.
- */
-@interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
+- (id)initWithDecoder:(id<IDZAudioDecoder>)decoder error:(NSError**)error;
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
+@property(assign) id<IDZAudioPlayerDelegate> delegate;
+@property(readonly) NSTimeInterval deviceCurrentTime;
 
 @end
+

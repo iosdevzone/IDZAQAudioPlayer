@@ -1,6 +1,6 @@
 //
-//  IDZAQAudioPlayerAppDelegate.h
-//  IDZAQAudioPlayer
+//  IDZAudioDecoder.h
+//  IDZAudioPlayerDevelopment
 //
 // Copyright (c) 2013 iOSDeveloperZone.com
 //
@@ -23,18 +23,25 @@
 // THE SOFTWARE.
 /**
  * @file
- * @brief Xcode generated App Delegate header file.
+ * @brief The required interface of an audio decoder.
  */
-#import <UIKit/UIKit.h>
-
-@class IDZAudioPlayerViewController;
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 /**
- * @brief Xcode generate App Delegate class.
+ * @brief Required audio decoder methods and properties
+ *
+ * The IDZAQAudioPlayer can playback audio from a decoder that
+ * implements these methods. IDZOggVorbisFileDecoder is a concrete 
+ * implementation that plays back Ogg Vorbis files.
+ *
+ * @see IDZOggVorbisFileDecoder
  */
-@interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
+@protocol IDZAudioDecoder <NSObject>
+@required
+@property(readonly) AudioStreamBasicDescription dataFormat;
+@property(readonly) NSTimeInterval duration;
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
+- (BOOL)readBuffer:(AudioQueueBufferRef)buffer;
+- (BOOL)seekToTime:(NSTimeInterval)timeInterval error:(NSError*)error;
 
 @end
