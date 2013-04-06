@@ -32,9 +32,13 @@
  * @brief Xcode generate App Delegate class.
  */
 @interface IDZAQAudioPlayerAppDelegate : UIResponder <UIApplicationDelegate>
-
+/**
+ * @brief The application's window.
+ */
 @property (strong, nonatomic) UIWindow *window;
-
+/**
+ * @brief The application's view controller.
+ */
 @property (strong, nonatomic) IDZAudioPlayerViewController *viewController;
 
 @end

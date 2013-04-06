@@ -45,20 +45,36 @@ typedef enum IDZAudioPlayStateTag
     
 } IDZAudioPlayerState;
 
-
+/**
+ * @brief IDZAudioPlayer private internals.
+ */
 @interface IDZAQAudioPlayer ()
 {
+@private
     AudioQueueRef mQueue;
     AudioQueueBufferRef mBuffers[IDZ_BUFFER_COUNT];
     BOOL mStopping;
     NSTimeInterval mQueueStartTime;
 }
-
+/**
+ * @brief Queries the value of the Audio Queue's kAudioQueueProperty_IsRunning property.
+ */
 - (UInt32)queryIsRunning;
+/**
+ * @brief Reads data from the audio source and enqueues it on the audio queue.
+ */
 - (void)readBuffer:(AudioQueueBufferRef)buffer;
-
+/**
+ * @brief YES if the player is playing, NO otherwise.
+ */
 @property (readwrite, getter=isPlaying) BOOL playing;
+/**
+ * @brief The decoder associated with this player.
+ */
 @property (readonly, strong) id<IDZAudioDecoder> decoder;
+/**
+ * @brief The current player state.
+ */
 @property (nonatomic, assign) IDZAudioPlayerState state;
 @end
 

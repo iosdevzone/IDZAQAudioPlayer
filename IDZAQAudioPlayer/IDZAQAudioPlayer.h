@@ -27,12 +27,27 @@
 #import "IDZAudioDecoder.h"
 /**
  * @brief An Audio Queue based audio player conforming to IDZAudioPlayer.
+ *
+ * This class plays audio data supplied by an object conforming to 
+ * the IDZAudioDecoder protocol, for example, the IDZOggVorbisFileDecoder
+ * class can be used to play Ogg Vorbis files.
  */
 @interface IDZAQAudioPlayer : NSObject<IDZAudioPlayer>
-
+/**
+ * @brief Initialized the receiver to play audio from a specified decoder.
+ * 
+ * @param decoder the decoder to obtain audio data from, must no be nil.
+ * @param error will receive error information if not nil.
+ * @return a pointer to the receiver or nil if an error occurs.
+ */
 - (id)initWithDecoder:(id<IDZAudioDecoder>)decoder error:(NSError**)error;
-
+/**
+ * @brief Delegate notified when playback ends.
+ */
 @property(assign) id<IDZAudioPlayerDelegate> delegate;
+/**
+ * @brief The current audio device time.
+ */
 @property(readonly) NSTimeInterval deviceCurrentTime;
 
 @end

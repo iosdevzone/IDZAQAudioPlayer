@@ -24,30 +24,74 @@
 #import <UIKit/UIKit.h>
 #import "IDZAQAudioPlayer.h"
 
+/**
+ * @brief A quick and dirty screen for controlling and testing an IDZAudioPlayer.
+ */
 @interface IDZAudioPlayerViewController : UIViewController<IDZAudioPlayerDelegate>
-
+/**
+ * @brief Displays current playback time.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *currentTimeLabel;
+/**
+ * @brief Displays current audio device time.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *deviceCurrentTimeLabel;
+/**
+ * @brief Displays source duration.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+/**
+ * @brief Displays number of channels in source.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *numberOfChannelsLabel;
+/**
+ * @brief Displays YES if the player is playing, NO otherwise.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *playingLabel;
-
+/**
+ * @brief Slider label displaying current playback time.
+ * @see currentTimeLabel
+ */
 @property (weak, nonatomic) IBOutlet UILabel *elapsedTimeLabel;
+/**
+ * @brief Slider label displaying remaining playback time.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *remainingTimeLabel;
-
+/**
+ * @brief Slider intended to allow user to seek in source.
+ */
 @property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
-
-
-
+/**
+ * @brief Button that invokes #play:
+ */
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+/**
+ * @brief Button that invokes #pause:
+ */
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+/**
+ * @brief Button that invokes #stop:
+ */
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
-
+/**
+ * @brief Begins playback.
+ */
 - (IBAction)play:(id)sender;
+/**
+ * @brief Pauses playback.
+ */
 - (IBAction)pause:(id)sender;
+/**
+ * @brief Stops playback.
+ */
 - (IBAction)stop:(id)sender;
-
+/**
+ * @brief Updates the slider labels as the user drags its.
+ */
 - (IBAction)currentTimeSliderValueChanged:(id)sender;
+/**
+ * @brief Seeks when the user releases the slider.
+ */
 - (IBAction)currentTimeSliderTouchUpInside:(id)sender;
 
 

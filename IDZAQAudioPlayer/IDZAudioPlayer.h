@@ -25,10 +25,18 @@
 
 
 @protocol IDZAudioPlayer;
-
+/**
+ * @brief Receives notifications when playback ends.
+ */
 @protocol IDZAudioPlayerDelegate
+/**
+ * @brief Called when playback ends.
+ */
 - (void)audioPlayerDidFinishPlaying:(id<IDZAudioPlayer>)player
                        successfully:(BOOL)flag;
+/**
+ * @brief Called when a decode error occurs.
+ */
 - (void)audioPlayerDecodeErrorDidOccur:(id<IDZAudioPlayer>)player
                                  error:(NSError *)error;
 @end
@@ -43,18 +51,47 @@
  */
 @protocol IDZAudioPlayer <NSObject>
 
+/**
+ * @brief Pre-queues buffers for faster response to #play
+ */
 - (BOOL)prepareToPlay;
+/**
+ * @brief Begins playback.
+ */
 - (BOOL)play;
+/**
+ * @brief Pauses playback.
+ */
 - (BOOL)pause;
+/**
+ * @brief Stops playback.
+ */
 - (BOOL)stop;
 
 /* properties */
-
+/**
+ * @brief YES when the player is playing, NO otherwise.
+ */
 @property(readonly, getter=isPlaying) BOOL playing;
+/**
+ * @brief Number of channels in the audio source.
+ */
 @property(readonly) NSUInteger numberOfChannels;
+/**
+ * @brief Duration of the source in seconds.
+ */
 @property(readonly) NSTimeInterval duration;
+/**
+ * @brief Delegate for notifications.
+ */
 @property(assign) id<IDZAudioPlayerDelegate> delegate;
+/**
+ * @brief Current playback time in seconds.
+ */
 @property NSTimeInterval currentTime;
+/**
+ * @brief Current audio device time in seconds.
+ */
 @property(readonly) NSTimeInterval deviceCurrentTime;
 
 @end

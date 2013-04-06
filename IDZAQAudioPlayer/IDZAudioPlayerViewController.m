@@ -27,13 +27,25 @@
 
 
 
-
+/**
+ * @brief IDZAudioPlayerViewController private internals.
+ */
 @interface IDZAudioPlayerViewController ()
-
+/**
+ * @brief The audio player being controlled.
+ */
 @property (nonatomic, strong) id<IDZAudioPlayer> player;
+/**
+ * @brief The display update timer.
+ */
 @property (nonatomic, strong) NSTimer* timer;
-
+/**
+ * @brief Updates the display to reflact the current player state.
+ */
 - (void)updateDisplay;
+/**
+ * @brief Updates the slider labels based on the slider's current value.
+ */
 - (void)updateSliderLabels;
 
 //- (void)audioPlayerDidFinishPlaying:(id<IDZAudioPlayer>)player

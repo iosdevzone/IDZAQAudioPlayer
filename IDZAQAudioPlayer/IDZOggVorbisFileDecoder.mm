@@ -31,8 +31,12 @@
 #define IDZ_BYTES_TO_BITS(bytes) ((bytes) * IDZ_BITS_PER_BYTE)
 #define IDZ_OGG_VORBIS_WORDSIZE 2
 
+/**
+ * @brief IDZOggVorbisFileDecoder private internals.
+ */
 @interface IDZOggVorbisFileDecoder ()
 {
+@private
     FILE* mpFile;
     OggVorbis_File mOggVorbisFile;
 }
