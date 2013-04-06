@@ -40,6 +40,10 @@
  */
 @property (nonatomic, strong) NSTimer* timer;
 /**
+ * @brief Starts the display update timer.
+ */
+- (void)startTimer;
+/**
  * @brief Updates the display to reflact the current player state.
  */
 - (void)updateDisplay;
@@ -129,7 +133,7 @@
 
 - (IBAction)play:(id)sender {
     IDZTrace();
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [self startTimer];
     [self.player play];
                   
 }
@@ -162,6 +166,8 @@
 {
     float value = self.currentTimeSlider.value;
     self.player.currentTime = value;
+    if(self.player.playing)
+        [self startTimer];
 }
 
 #pragma mark - Display Update
@@ -188,9 +194,13 @@
 }
 
 #pragma mark - Timer
+- (void)startTimer
+{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+}
+
 - (void)timerFired:(NSTimer*)timer
 {
-    IDZTrace();
     [self updateDisplay];
 }
 

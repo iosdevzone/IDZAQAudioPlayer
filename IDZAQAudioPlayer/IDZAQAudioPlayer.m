@@ -65,6 +65,12 @@ typedef enum IDZAudioPlayStateTag
  */
 - (void)readBuffer:(AudioQueueBufferRef)buffer;
 /**
+ * @brief Stops playback
+ * @param immediate if YES playback stops immediately, otherwise playback stops after all enqueued buffers 
+ * have finished playing.
+ */
+- (BOOL)stop:(BOOL)immediate;
+/**
  * @brief YES if the player is playing, NO otherwise.
  */
 @property (readwrite, getter=isPlaying) BOOL playing;
@@ -165,7 +171,6 @@ static void IDZPropertyListener(void* inUserData,
 
 - (BOOL)prepareToPlay
 {
-    mStopping = NO;
     for(int i = 0; i < IDZ_BUFFER_COUNT; ++i)
     {
         [self readBuffer:mBuffers[i]];
@@ -188,6 +193,7 @@ static void IDZPropertyListener(void* inUserData,
     OSStatus osStatus = AudioQueueStart(mQueue, NULL);
     NSAssert(osStatus == noErr, @"AudioQueueStart failed");
     self.state = IDZAudioPlayerStatePlaying;
+    self.playing = YES;
     return (osStatus == noErr);
     
 }
@@ -201,10 +207,16 @@ static void IDZPropertyListener(void* inUserData,
     
     
 }
+
 - (BOOL)stop
 {
+    return [self stop:YES];
+}
+
+- (BOOL)stop:(BOOL)immediate
+{
     self.state = IDZAudioPlayerStateStopping;
-    OSStatus osStatus = AudioQueueStop(mQueue, true);
+    OSStatus osStatus = AudioQueueStop(mQueue, immediate);
 
     NSAssert(osStatus == noErr, @"AudioQueueStop failed");
     return (osStatus == noErr);    
@@ -274,14 +286,33 @@ static void IDZPropertyListener(void* inUserData,
             currentTime = -1.0;
             
     }
-    return currentTime;
+    return mQueueStartTime + currentTime;
 }
 
 - (void)setCurrentTime:(NSTimeInterval)currentTime
 {
-    //IDZAudioPlayerState previousState = self.state;
+    IDZAudioPlayerState previousState = self.state;
+    switch(self.state)
+    {
+        case IDZAudioPlayerStatePlaying:
+            [self stop:YES];
+            break;
+        default:
+            break;
+    }
     [self.decoder seekToTime:currentTime error:nil];
     mQueueStartTime = currentTime;
+    switch(previousState)
+    {
+        case IDZAudioPlayerStatePrepared:
+            [self prepareToPlay];
+            break;
+        case IDZAudioPlayerStatePlaying:
+            [self play];
+            break;
+        default:
+            break;
+    }
 }
 
 - (NSUInteger)numberOfChannels
