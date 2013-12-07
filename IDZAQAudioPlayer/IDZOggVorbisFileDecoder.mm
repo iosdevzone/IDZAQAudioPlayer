@@ -90,13 +90,13 @@
     int currentSection = -1;
     
     /* See: http://xiph.org/vorbis/doc/vorbisfile/ov_read.html */
-    long nTotalBytesRead = 0;
+    UInt32 nTotalBytesRead = 0;
     long nBytesRead = 0;
     do
     {
         nBytesRead = ov_read(&mOggVorbisFile,
                              (char*)pBuffer->mAudioData + nTotalBytesRead,
-                             pBuffer->mAudioDataBytesCapacity - nTotalBytesRead,
+                             (int)(pBuffer->mAudioDataBytesCapacity - nTotalBytesRead),
                              bigEndian, wordSize,
                              signedSamples, &currentSection);
         if(nBytesRead  <= 0)

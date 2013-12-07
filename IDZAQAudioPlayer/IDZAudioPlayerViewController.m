@@ -101,7 +101,7 @@
     [self.player prepareToPlay];
     // Fill in the labels that do not change
     self.durationLabel.text = [NSString stringWithFormat:@"%.02fs",self.player.duration];
-    self.numberOfChannelsLabel.text = [NSString stringWithFormat:@"%d", self.player.numberOfChannels];
+    self.numberOfChannelsLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.player.numberOfChannels];
     self.currentTimeSlider.minimumValue = 0.0f;
     self.currentTimeSlider.maximumValue = self.player.duration;
     [self updateDisplay];

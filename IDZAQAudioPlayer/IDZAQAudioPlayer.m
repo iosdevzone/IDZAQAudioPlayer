@@ -110,7 +110,7 @@ static void IDZPropertyListener(void* inUserData,
     if(inID == kAudioQueueProperty_IsRunning)
     {
         UInt32 isRunning = [pPlayer queryIsRunning];
-        NSLog(@"isRunning = %lu", isRunning);
+        NSLog(@"isRunning = %u", (unsigned int)isRunning);
         BOOL bDidFinish = (pPlayer.playing && !isRunning);
         pPlayer.playing = isRunning ? YES : NO;
         if(bDidFinish)
@@ -233,7 +233,7 @@ static void IDZPropertyListener(void* inUserData,
         OSStatus status = AudioQueueEnqueueBuffer(mQueue, buffer, 0, 0);
         if(status != noErr)
         {
-            NSLog(@"Error: %s status=%ld", __PRETTY_FUNCTION__, status);
+            NSLog(@"Error: %s status=%d", __PRETTY_FUNCTION__, (int)status);
         }
     }
     else

@@ -59,6 +59,6 @@
  * @param error if not nil will receive error information in case of an error.
  * @return YES if successful, NO if an error occurs.
  */
-- (BOOL)seekToTime:(NSTimeInterval)timeInterval error:(NSError*)error;
+- (BOOL)seekToTime:(NSTimeInterval)timeInterval error:(NSError*__autoreleasing*)error;
 
 @end
