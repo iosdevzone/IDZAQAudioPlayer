@@ -1,0 +1,2 @@
+#!/bin/bash
+xctool -scheme IDZAQAudioPlayer -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.0'
