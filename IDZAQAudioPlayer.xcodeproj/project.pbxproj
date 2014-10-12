@@ -163,7 +163,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IDZAQAudioPlayer;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = iOSDeveloperZone.com;
 			};
 			buildConfigurationList = 0C2E08B7170F833400450410 /* Build configuration list for PBXProject "IDZAQAudioPlayer" */;
@@ -293,7 +293,6 @@
 		0C2E08E0170F833500450410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -313,7 +312,6 @@
 		0C2E08E1170F833500450410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
