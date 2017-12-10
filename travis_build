@@ -1,2 +1,2 @@
 #!/bin/bash
-xcodebuild -scheme IDZAQAudioPlayer -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.0'
+xcodebuild -scheme IDZAQAudioPlayer -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2'
